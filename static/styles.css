@@ -1,0 +1,253 @@
+:root {
+  --bg: #f5efe5;
+  --panel: rgba(255, 250, 243, 0.86);
+  --ink: #1d1a16;
+  --muted: #6c6258;
+  --accent: #c84c22;
+  --accent-soft: #ef9f63;
+  --line: rgba(29, 26, 22, 0.08);
+  --ok: #2f7d4b;
+  --pause: #9d6b12;
+  --draft: #6a5acd;
+  --shadow: 0 24px 60px rgba(77, 46, 14, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(200, 76, 34, 0.24), transparent 28%),
+    radial-gradient(circle at right, rgba(239, 159, 99, 0.22), transparent 30%),
+    linear-gradient(180deg, #fffaf3 0%, var(--bg) 100%);
+}
+
+.shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.hero h1,
+.section-heading h2,
+.template-card h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  line-height: 0.95;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-size: 0.78rem;
+}
+
+.hero-copy {
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero-panel,
+.panel,
+.kpi-card,
+.template-card {
+  backdrop-filter: blur(10px);
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow);
+  border-radius: 24px;
+}
+
+.hero-panel,
+.panel {
+  padding: 24px;
+}
+
+.hero-label {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(200, 76, 34, 0.1);
+  color: var(--accent);
+  font-size: 0.82rem;
+}
+
+.filters {
+  display: grid;
+  gap: 16px;
+}
+
+label span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 0.98rem;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kpi-card {
+  padding: 20px;
+}
+
+.kpi-card p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.kpi-card strong {
+  font-size: 1.8rem;
+}
+
+.panel + .panel {
+  margin-top: 24px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.template-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.template-card {
+  padding: 18px;
+}
+
+.template-header,
+.template-metrics {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.template-header p,
+.template-metrics {
+  color: var(--muted);
+}
+
+.meter {
+  margin: 16px 0 10px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(200, 76, 34, 0.1);
+  overflow: hidden;
+}
+
+.meter-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.empty-state,
+.empty-row {
+  color: var(--muted);
+}
+
+.empty-state {
+  margin: 0;
+  padding: 12px 0 4px;
+}
+
+.empty-row {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+td small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  text-transform: capitalize;
+}
+
+.status.active {
+  color: var(--ok);
+  background: rgba(47, 125, 75, 0.12);
+}
+
+.status.paused {
+  color: var(--pause);
+  background: rgba(157, 107, 18, 0.12);
+}
+
+.status.draft {
+  color: var(--draft);
+  background: rgba(106, 90, 205, 0.12);
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .kpi-grid,
+  .template-list {
+    grid-template-columns: 1fr;
+  }
+}

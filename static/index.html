@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emailiss</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Email Operations Intelligence</p>
+          <h1>Emailiss</h1>
+          <p class="hero-copy">
+            Surveillez vos volumes d'envoi, la cadence, les performances par
+            cible et l'impact de chaque visuel email dans un meme cockpit.
+          </p>
+        </div>
+
+        <div class="hero-panel">
+          <span class="hero-label">Vue</span>
+          <div class="filters">
+            <label>
+              <span>Cible</span>
+              <select id="targetFilter"></select>
+            </label>
+            <label>
+              <span>Statut</span>
+              <select id="statusFilter"></select>
+            </label>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="kpi-grid" id="kpiGrid"></section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Visuels & templates</p>
+              <h2>Performance creative</h2>
+            </div>
+          </div>
+          <div class="template-list" id="templateList"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Campagnes</p>
+              <h2>Suivi operationnel</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Campagne</th>
+                  <th>Cible</th>
+                  <th>Template</th>
+                  <th>Cadence/h</th>
+                  <th>Open</th>
+                  <th>Click</th>
+                  <th>Bounce</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody id="campaignRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
